@@ -79,6 +79,14 @@ openssl ec -in privatekey.pem -pubout -out publickey.pem
 openssl ec -in privatekey.pem -text -noout
 ```
 
+## Format conversions
+
+### Converting cert and PEM private key to PFX
+
+```bash
+openssl pkcs12 -inkey privatekey.pem -in example.cert -export -out example.pfx
+```
+
 ### Converting a HEX key to PEM format
 
 Assuming it's an EC key, starting with a hex string, first it has to get decoded to get to the DER-encoding. The hex string should start with 30 which
