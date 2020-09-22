@@ -73,6 +73,12 @@ Using the previously generated private key to generate a public key counterpart:
 openssl ec -in privatekey.pem -pubout -out publickey.pem
 ```
 
+### Print ECDSA key
+
+```bash
+openssl ec -in privatekey.pem -text -noout
+```
+
 ### Converting a HEX key to PEM format
 
 Assuming it's an EC key, starting with a hex string, first it has to get decoded to get to the DER-encoding. The hex string should start with 30 which
